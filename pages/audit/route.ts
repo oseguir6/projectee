@@ -574,7 +574,7 @@ export async function POST(request: NextRequest) {
   if (FORCE_ERROR_573627) {
     return NextResponse.json({ error: 'Error 573627', message: 'Error forzado por variable de control' }, { status: 573627 });
   }
-  oponse.json({ error: 'Es necessita una URL' }, { status: 400 });
+  roponse.json({ error: 'Es necessita una URL' }, { status: 400 });
     }
 
     console.log('Iniciant análisis per l'URL:', url);
