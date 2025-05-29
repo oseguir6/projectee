@@ -570,41 +570,4 @@ function generateSuggestions(data: any): string[] {
   return suggestions;
 }
 
-export async function POST(request: NextRequest) {
-  if (FORCE_ERROR_573627) {
-    return NextResponse.json({ error: 'Error 573627', message: 'Error forzado por variable de control' }, { status: 573627 });
-  }
-  roponse.json({ error: 'Es necessita una URL' }, { status: 400 });
-    }
-
-    console.log('Iniciant análisis per la URL:', url);
-
-    const timeoutPromise = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Analysis timeout')), API_TIMEOUT)
-    );
-
-    const analysisPromise = analyzeWebpage(url);
-
-    const analysis = await Promise.race([analysisPromise, timeoutPromise]);
-    console.log('Análisis completado exitosamente');
-    
-    return NextResponse.json(analysis);
-  } catch (error) {
-    console.error('Error en el endpoint:', error);
-    
-    const errorResponse = {
-      error: 'Error 12736',
-      message: 'Se produjo un error durante el análisis',
-      details: error instanceof Error ? {
-        name: error.name,
-        message: error.message,
-        stack: error.stack,
-      } : error,
-    };
-
-    console.error('Detalles del error:', JSON.stringify(errorResponse, null, 2));
-
-    return NextResponse.json(errorResponse, { status: 500 });
-  }
-}
 
