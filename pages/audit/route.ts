@@ -577,7 +577,7 @@ export async function POST(request: NextRequest) {
   roponse.json({ error: 'Es necessita una URL' }, { status: 400 });
     }
 
-    console.log('Iniciant análisis per l'URL:', url);
+    console.log('Iniciant análisis per la URL:', url);
 
     const timeoutPromise = new Promise((_, reject) => 
       setTimeout(() => reject(new Error('Analysis timeout')), API_TIMEOUT)
